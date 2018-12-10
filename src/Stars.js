@@ -1,6 +1,7 @@
 import React from 'react';
 import {Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import Star from './Star';
 
 const query = gql`
 fragment fields on Repository {
@@ -43,11 +44,13 @@ const Stars = () => (
 
 {({loading, error, data}) => 
 {
-	return Object.keys(data).map((key) => {
+	 const sortedData = Object.keys(data).sort((a, b) => data[b].stargazers.totalCount - data[a].stargazers.totalCount );
+	
+	 return sortedData.map((key) => {
 		const {name, description, url, stargazers} = data[key];
 		return <div>
-			<a href={url}>{name}</a>{stargazers.totalCount}
-			<p>{description}</p>
+			<a href={url}><Star>{stargazers.totalCount}</Star></a>
+			<div>{name}</div>
 			</div>
 	})
 }
