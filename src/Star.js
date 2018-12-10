@@ -1,7 +1,13 @@
 import React from 'react'
 
-const Star = props => (
-  <svg style={{width: "200px", height: "200px"}} viewBox="0 0 748 711">
+const Star = props => {
+
+
+	let styles = {
+		width: props.width,
+		height: props.height
+	}
+  return <svg className="star" style={styles} viewBox="0 0 748 711">
     <path
       fill="#FFF062"
       fillRule="nonzero"
@@ -9,6 +15,8 @@ const Star = props => (
     />
 	<text style={{fontSize: "60px", fontWeight: "bold"}} x="50%" y="55%" dominant-baseline="middle" text-anchor="middle">{props.children}</text>  
   </svg>
-)
+  }
+
+  Star.defaultProps = {width: "150px", height: "150px"}
 
 export default Star

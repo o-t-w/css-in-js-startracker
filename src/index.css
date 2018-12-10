@@ -10,9 +10,32 @@ body {
   color: white;
   font-weight: 600;
   text-align: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App div:first-child .star {
+	width: 210px !important;
+	height: 210px !important;
+}
+
+.App div:first-child {
+	grid-column: 1 / -1;
+}
+
+.App {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+	grid-row-gap: 50px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+	max-width: 100%;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }

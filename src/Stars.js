@@ -46,7 +46,7 @@ const Stars = () => (
 {
 	 const sortedData = Object.keys(data).sort((a, b) => data[b].stargazers.totalCount - data[a].stargazers.totalCount );
 	
-	 return sortedData.map((key) => {
+	 return sortedData.map((key, index) => {
 		const {name, description, url, stargazers} = data[key];
 		return <div>
 			<a href={url}><Star>{stargazers.totalCount}</Star></a>
