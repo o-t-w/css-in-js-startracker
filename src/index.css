@@ -6,8 +6,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(#3023AE, #C86DD7);
-  color: white;
   font-weight: 600;
   text-align: center;
   min-height: 100vh;
@@ -19,23 +17,6 @@ code {
     monospace;
 }
 
-.App div:first-child .star {
-	width: 210px !important;
-	height: 210px !important;
-}
-
-.App div:first-child {
-	grid-column: 1 / -1;
-}
-
-.App {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-	grid-row-gap: 50px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-	max-width: 100%;
-	width: 800px;
-	margin-left: auto;
-	margin-right: auto;
+.App > div {
+	height: 100vh !important;
 }
