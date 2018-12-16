@@ -5,9 +5,7 @@ import { ResponsiveBar } from '@nivo/bar';
 
 const query = gql`
 fragment fields on Repository {
-description
-name
-url 
+name 
 stargazers {
 	totalCount
   }
@@ -52,11 +50,13 @@ const Stars = () => (
 
 {({loading, error, data}) => 
 {
+	if (loading) return <p>Loading data...</p>
+	if (error) return <p>Error :(</p>
 	 const sortedData = Object.keys(data).sort((a, b) => data[b].stargazers.totalCount - data[a].stargazers.totalCount );
 
 	 let starsData = [];
 	 sortedData.forEach(repoName => {
-		 starsData.push({name: repoName, stars: data[repoName].stargazers.totalCount})
+		 starsData.push({name: data[repoName].name, stars: data[repoName].stargazers.totalCount})
 	 });
 
 
@@ -70,7 +70,7 @@ const Stars = () => (
 		 "top": 50,
 		 "right": 130,
 		 "bottom": 50,
-		 "left": 60
+		 "left": 130
 	 }}
 	 padding={0.3}
 	 layout="horizontal"
