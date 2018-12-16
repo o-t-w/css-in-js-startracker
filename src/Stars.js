@@ -68,7 +68,7 @@ const Stars = () => (
 	 indexBy="name"
 	 margin={{
 		 "top": 50,
-		 "right": 130,
+		 "right": 120,
 		 "bottom": 50,
 		 "left": 130
 	 }}
@@ -76,12 +76,13 @@ const Stars = () => (
 	 layout="horizontal"
 	 borderColor="inherit:darker(1.6)"
 	 axisBottom={{
-		 "tickSize": 5,
-		 "tickPadding": 5,
+		 "tickSize": 4,
+		 "tickPadding": 3,
 		 "tickRotation": 0,
+		 "tickValues": [0, 4000, 8000, 12000, 16000, 20000],
 		 "legend": "Github stars",
 		 "legendPosition": "middle",
-		 "legendOffset": 32
+		 "legendOffset": 36
 	 }}
 	 
 	 legends={[
